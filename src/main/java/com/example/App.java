@@ -10,7 +10,7 @@ public class App {
      * Точка входа. При запуске `java -jar ...` выведет приветствие.
      */
     public static void main(String[] args) {
-        System.out.println(greet("World"));
+        System.out.println(greet("World hi"));
     }
 
     /**
