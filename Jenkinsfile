@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven-3'   // имя ТОЧНО как в Global Tool Configuration
+        maven 'maven-3'   // имя Maven из Global Tool Configuration
     }
 
     stages {
@@ -27,6 +27,12 @@ pipeline {
         stage('Package') {
             steps {
                 sh 'mvn package'
+            }
+        }
+
+        stage('Archive') {        // ← дополнительная стадия для лабы
+            steps {
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
     }
