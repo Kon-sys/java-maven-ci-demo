@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    triggers {
+            // каждые ~5 минут Jenkins проверяет, есть ли новые коммиты
+            pollSCM('H/5 * * * *')
+        }
+
     tools {
         maven 'maven-3'   // имя Maven из Global Tool Configuration
     }
