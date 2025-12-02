@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven-3'   // имя ТОЧНО как в Global Tool Configuration
+    }
+
     stages {
         stage('Checkout') {
             steps {
